@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: cyan;
+    padding: 10px;
+}
+.nav-link ul{
+    display: flex;
+    list-style: none;
+}
+.nav-link li{
+    font-size: 1.2rem;
+    margin: 10px;
+
+}
+.nav-link a{
+    text-decoration: none;
+}
+/* The End of navbar */
+#my-video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+.title{
+    color: rgb(54, 228, 10);
+}
+.head-one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    font-size: 1.5rem;
+}
+#target{
+    display: flex;
+    margin-left: 1rem;
+    position: relative;
+}
+#target::after{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 2px;
+    background: rgb(255, 208, 0);
+    top: 0;
+    right: 0;
+    transform: rotateY(-4px);
+    animation: anim 0.8s linear infinite;
+}
+/* The beginn of toggle-button */
+.toggle-button{
+    position: absolute;
+    right: 2rem;
+    top: 10px;
+    flex-direction: column;
+    width: 25px;
+    height: 21px;
+    /* display: flex; */
+    justify-content: space-around;
+    border-radius: 5px;
+
+}
+.toggle-button .bar{
+    width: 30px;
+    height: 3px;
+    background: darkorange;
+}
+#target{
+    color: rgb(36, 106, 185);
+}
+/* The End animation */
+
+@keyframes anim{
+    50%{
+        opacity: 0.1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media(max-width: 675px){
+    .toggle-button{
+        display: flex;
+    }
+    .nav-link{
+        display: none;
+        width: 100%;
+    }
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-link ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    .nav-link li{
+        text-align: center;
+    }
+    .nav-link.active{
+        display: flex;
+        
+    }
+}
